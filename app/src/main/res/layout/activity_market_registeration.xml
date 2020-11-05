@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout  android:orientation="vertical" android:id="@+id/market_layout" android:layout_width="match_parent" android:background="@color/cardview_light_background" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" >
+            <TextView
+
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/marketforum1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Market Registeration" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+            <EditText
+                android:id="@+id/tf_marketRegisteration_name"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Market Name"
+                android:singleLine="true" />
+            <EditText
+                android:textSize="13sp"
+                android:id="@+id/tf_marketRegisteration_address"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Address"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_manager"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Manager/Administrator"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_cellular"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Cellular"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_telephone"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Telephone"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/tf_marketRegisteration_mail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/text_fields_style"
+                android:hint="Email"
+                android:inputType="textWebEmailAddress"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="13sp" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_district"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="District"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_cost"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="Shipping Cost"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/tf_marketRegisteration_username"
+                android:textSize="13sp"
+                android:background="@drawable/text_fields_style"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="UserName"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/tf_marketRegisteration_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/text_fields_style"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/tf_marketRegisteration_confirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/text_fields_style"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textSize="13sp" />
+            <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" >
+            <Button   android:id="@+id/btn_market_registration_register" android:background="@drawable/bluebutton_style" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="50dp" android:layout_marginTop="20dp" android:layout_marginRight="50dp" android:layout_marginBottom="20dp" android:text="Register"  android:layout_centerInParent="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

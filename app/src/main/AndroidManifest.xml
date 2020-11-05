@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.radiocodeford.buyerseller">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".BuyerTray"></activity>
+        <activity
+            android:name=".MyBuyersOrders"
+            android:label="My Buyers" />
+        <activity android:name=".MarketRegisteration" />
+        <activity
+            android:name=".MySellersOrders"
+            android:label="My Seller" />
+        <activity
+            android:name=".PaidOrders"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Ticket"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Survey"
+            android:label="Feedback" />
+        <activity
+            android:name=".Payments"
+            android:label="Payments" />
+        <activity
+            android:name=".ShipInformation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShopingCart"
+            android:label="Shoping Cart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CategoriesHomeScreen"
+            android:label="BuyerSeller"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Order.BuyerTrayOrderDetails"
+            android:label="Buyer Tray"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/Xlogo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BuyerHomeScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Order.MakeOrderHomeScreen"
+            android:label="BuyerSeller"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ClientRegisteration"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Order.order_details_shop_tray"
+            android:label="Shop Tray"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CodePhoneNumber"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".homescreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".LoginSellerBuyer"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".PhoneNumber"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Xlogo" />
+        <activity
+            android:name=".Order.ShopTray"
+            android:label="Shop Tray"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

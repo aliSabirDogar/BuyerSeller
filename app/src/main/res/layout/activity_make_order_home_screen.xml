@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/scroll"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+<!--	this.write_order_manual = (EditText) findViewById(R.id.write_order_manual);
+	this.quantity = (EditText) findViewById(R.id.tv_product_quantity);
+	this.select = (CheckBox) findViewById(R.id.RB_select_order);
+	this.noti = (ImageView) findViewById(R.id.notification_id_bell);
+	this.title = (TextView) findViewById(R.id.tv_order_screen);
+	this.add = (Button) findViewById(R.id.btn_add_order);
+	this.send = (Button) findViewById(R.id.btn_send_order);
+	this.manual_order = (Button) findViewById(R.id.btn_manual_order);
+	this.store = (CheckBox) findViewById(R.id.RB_search_store);
+	this.write = (CheckBox) findViewById(R.id.RB_write_order);-->
+<LinearLayout android:orientation="vertical" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+	<LinearLayout android:orientation="horizontal" android:layout_marginTop="10dp" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp">
+		<EditText android:textSize="14dp" android:drawableLeft="@android:drawable/ic_menu_search" android:layout_marginLeft="0dp" android:layout_marginRight="20dp" android:padding="10dp" android:textColorHint="@color/colorPrimary" android:gravity="left|center"  android:layout_weight="1"  android:visibility="visible" android:layout_width="match_parent" android:layout_height="40dp" android:hint="Search" android:background="@drawable/text_fields_style"  />
+
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="horizontal"  android:layout_width="match_parent" android:layout_height="50dp">
+		<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp">
+			<Button  android:textSize="13dp" android:textStyle="bold"  android:gravity="center" android:id="@+id/btn_make_your_order" android:background="@drawable/bluebutton_style" android:backgroundTint="#58827e" android:layout_width="140dp" android:layout_height="30dp" android:text="Make Your order"  />
+			<Button android:textSize="13dp" android:textStyle="bold"  android:gravity="center" android:id="@+id/buyerTray_btn" android:background="@drawable/bluebutton_style" android:layout_width="140dp" android:layout_height="30dp" android:layout_marginLeft="20dp" android:text="Buyers Trayer"  />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="vertical"  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+		<CheckBox android:id="@+id/RB_select_order" android:layout_width="match_parent" android:layout_height="30dp" android:text="Write your order and select" />
+		<CheckBox android:id="@+id/RB_search_store" android:layout_width="match_parent" android:layout_height="30dp" android:text="Search by preferred  store name" />
+		<CheckBox android:id="@+id/RB_write_order" android:layout_width="match_parent" android:layout_height="30dp" android:text="Just write your order and you are done" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:layout_marginTop="20dp"
+		android:gravity="center"
+		android:id="@+id/write_order_layout"
+		android:visibility="gone"
+		android:orientation="vertical">
+
+		<EditText
+			android:id="@+id/write_order_manual"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:visibility="gone"
+			android:hint="Write your order"
+	/>
+
+		<Button
+			android:id="@+id/btn_manual_order"
+			android:layout_width="180dp"
+			android:layout_height="40dp"
+			android:background="@drawable/bluebutton_style"
+			android:gravity="center"
+			android:visibility="gone"
+			android:text="Send"
+			android:textSize="13dp"
+			android:textStyle="bold"
+		 />
+	</LinearLayout>
+	<LinearLayout android:id="@+id/store_layout" android:orientation="vertical" android:visibility="gone" android:layout_width="match_parent" android:layout_height="100dp" android:layout_marginBottom="10dp">
+		<TextView android:textSize="20dp"  android:visibility="gone" android:textColor="@color/colorPrimary" android:id="@+id/tv_store_label" android:textColorHint="@color/colorPrimary" android:gravity="center"  android:layout_width="match_parent"  android:layout_height="wrap_content" android:text="Search store"   />
+		<Spinner android:gravity="center" android:visibility="gone" android:id="@+id/spinner_store"  android:layout_width="match_parent" android:layout_height="40dp" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="vertical"  android:layout_width="match_parent" android:layout_height="100dp" android:layout_marginTop="10dp">
+		<TextView android:textSize="18dp"   android:textColor="@color/colorPrimary" android:id="@+id/tv_order_screen" android:textStyle="bold"  android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginBottom="10dp" android:text="Select your order" />
+		<Spinner android:gravity="center" android:id="@+id/spinner_product" android:layout_width="match_parent" android:layout_height="30dp" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="horizontal"  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginBottom="10dp">
+		<EditText android:textSize="15dp" android:id="@+id/tf_product_quantity" android:layout_width="280dp" android:inputType="number" android:layout_height="40dp" android:layout_marginLeft="5dp" android:hint="2" android:layout_weight="1"  />
+		<Spinner android:gravity="center" android:id="@+id/spinner_weight_product" android:layout_width="match_parent" android:layout_height="30dp"  android:layout_weight="1" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="50dp" >
+		<Button android:textSize="13dp"   android:gravity="center" android:id="@+id/btn_add_order" android:background="@drawable/bluebutton_style" android:layout_width="140dp" android:layout_height="30dp" android:text="ADD" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center"  android:layout_width="match_parent" android:layout_height="160dp" >
+		<androidx.recyclerview.widget.RecyclerView android:id="@+id/list_orders_review"  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="30dp" android:layout_marginBottom="10dp" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center"  android:layout_width="match_parent" android:layout_height="80dp" android:layout_marginTop="10dp">
+		<Button android:textSize="13dp" android:id="@+id/btn_send_order" android:textStyle="bold" android:gravity="center"  android:background="@drawable/bluebutton_style" android:layout_width="180dp" android:layout_height="40dp" android:text="Send" android:layout_marginBottom="10dp" />
+	</LinearLayout>
+	<TextView android:textSize="18dp"   android:textColor="@color/colorPrimary" android:id="@+id/tv1" android:textStyle="bold"  android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginBottom="10dp" android:text="Location is set below" />
+	<TextView android:textSize="18dp"   android:textColor="@color/colorPrimary" android:id="@+id/tv_Location" android:textStyle="bold"  android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5dp" android:layout_marginBottom="10dp" android:text="Location" />
+</LinearLayout>
+
+
+</ScrollView>

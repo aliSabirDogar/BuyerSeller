@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="match_parent">
+	<LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="50dp">
+		<TextView android:textSize="15sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="50dp" android:text="MY PIN CODES IS" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="30dp">
+
+		<EditText
+			android:id="@+id/codephone1"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_marginRight="20dp"
+			android:gravity="center"
+			android:background="@drawable/text_fields_style"
+			android:inputType="number"
+			android:maxLength="1" />
+
+		<EditText
+			android:id="@+id/codephone2"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:gravity="center"
+			android:layout_marginRight="20dp"
+			android:background="@drawable/text_fields_style"
+			android:inputType="number"
+			android:maxLength="1" />
+
+		<EditText
+			android:id="@+id/codephone3"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:gravity="center"
+			android:layout_marginRight="20dp"
+			android:background="@drawable/text_fields_style"
+			android:inputType="number"
+			android:maxLength="1" />
+
+		<EditText
+			android:id="@+id/codephone4"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:gravity="center"
+			android:background="@drawable/text_fields_style"
+			android:inputType="number"
+			android:maxLength="1" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="30dp">
+		<LinearLayout  android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+		<TextView android:textSize="12sp" android:layout_marginRight="20dp" android:layout_marginLeft="20dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check your messages.We have sent PIN code to your number" />
+
+
+
+
+		</LinearLayout>
+		<Button  android:id="@+id/btn_code_proceed" android:background="@drawable/bluebutton_style" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="35dp" android:layout_marginRight="50dp" android:text="Proceed "  android:layout_centerInParent="true" />
+	</LinearLayout>
+</LinearLayout>

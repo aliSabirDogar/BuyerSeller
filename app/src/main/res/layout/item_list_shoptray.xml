@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="#58827e" android:layout_width="match_parent" android:layout_height="wrap_content">
+	<LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TextView android:textStyle="bold"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Customer Id" android:layout_weight="1" android:textColor="@android:color/black" android:layout_marginLeft="5dp"/>
+		<TextView android:textStyle="bold" android:id="@+id/tv_shoptray_id" android:layout_width="wrap_content" android:textColor= "@android:color/black" android:layout_height="wrap_content" android:text="Night party  LC" android:layout_weight="1" />
+	</LinearLayout>
+	<LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+		<TextView android:textStyle="bold"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cell " android:layout_weight="1" android:textColor="@android:color/black" android:layout_marginLeft="5dp"/>
+		<TextView android:textStyle="bold" android:id="@+id/tv_shoptray_cell" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/black" android:text="10.00" android:layout_weight="1" />
+	</LinearLayout>
+	<LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+		<TextView android:textStyle="bold"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Time" android:layout_weight="1" android:textColor="@android:color/black" android:layout_marginLeft="5dp"/>
+		<TextView android:textStyle="bold" android:id="@+id/tv_shoptray_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@android:color/black" android:text="10.00" android:layout_weight="1" />
+	</LinearLayout>
+</LinearLayout>

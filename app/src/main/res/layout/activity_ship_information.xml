@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/client_layout"     android:orientation="vertical" android:layout_width="match_parent" android:background="@color/cardview_light_background" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" >
+            <TextView android:textSize="20dp" android:textColor="@color/colorPrimary" android:textStyle="bold" android:gravity="center" android:id="@+id/ship_information" android:layout_width="match_parent" android:layout_height="50dp" android:text="Ship Information" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+            <EditText android:id="@+id/tf_ship_info_name" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Name" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_sur_name" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Surnames" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_reciever_name" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="name of the person who will recieve the order" android:singleLine="true" />
+            <EditText android:id="@+id/tf_Ship_Info_direction_line" android:textSize="13sp" android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Direction Line" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_address_refrence" android:textSize="13sp" android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Adress Refrenece" />
+            <EditText android:id="@+id/tf_ship_info_email" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Email" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_cellular" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="cellular" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_district" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="District" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_province" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Province" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_department" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Department" android:singleLine="true" />
+            <EditText android:id="@+id/tf_ship_info_country" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Country" android:singleLine="true" />
+
+        </LinearLayout>
+        <Button   android:id="@+id/btn_ship_info_continue_and_pay" android:background="@drawable/bluebutton_style" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="45dp"  android:layout_marginBottom="20dp" android:layout_marginRight="50dp" android:text="Continue and Pay"  android:layout_centerInParent="true" />
+    </LinearLayout>
+
+
+</ScrollView>

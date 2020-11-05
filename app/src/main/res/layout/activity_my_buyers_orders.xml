@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/cardview_light_background"
+        android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="My Orders"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/textview1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:text="Order Number:" />
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/tv_my_buyers_orderNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp"  android:text="1234" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/textview2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:text="Client:" />
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/tv_my_buyers_client" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp"  android:text="John Fred - 9632587" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/textview3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:text="Date:" />
+        <TextView android:textSize="20dp" android:textColor="@android:color/black" android:textStyle="bold" android:id="@+id/tv_my_buyers_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp"  android:text="June 26, 2020" />
+    </LinearLayout>
+        <LinearLayout  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+            <ListView
+                android:id="@+id/list_my_buyers_orders"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:divider="@android:color/black"
+                android:dividerHeight="2dp"
+                android:nestedScrollingEnabled="true"
+                android:orientation="horizontal"
+                tools:context="abhiandroid.com.listexample.MainActivity">
+            </ListView>
+        </LinearLayout>
+        <LinearLayout  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="vertical" android:layout_marginBottom="10dp" >
+            <Button
+                android:id="@+id/btn_my_buyers_goOut"
+                android:layout_width="150dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bluebutton_style"
+                android:text="Go Out "
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

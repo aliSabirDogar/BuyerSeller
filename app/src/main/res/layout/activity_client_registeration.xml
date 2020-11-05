@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/scroll"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+<LinearLayout  android:orientation="vertical" android:id="@+id/client_layout" android:layout_width="match_parent" android:background="@color/cardview_light_background" android:layout_height="wrap_content">
+
+	<LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" >
+		<TextView android:textSize="20dp" android:textColor="@color/colorPrimary" android:textStyle="bold" android:gravity="center" android:id="@+id/client_forum1" android:layout_width="match_parent" android:layout_height="50dp" android:text="Client Registeration" />
+	</LinearLayout>
+	<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="10dp">
+		<EditText android:id="@+id/tf_clientRegisteration_name" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Name" android:singleLine="true" />
+		<EditText android:id="@+id/tf_clientRegisteration_surName" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Surnames" android:singleLine="true" />
+		<EditText android:id="@+id/tf_clientRegisteration_address" android:textSize="13sp" android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Address" android:singleLine="true" />
+		<EditText android:id="@+id/tf_clientRegisteration_district" android:textSize="13sp" android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="District" android:singleLine="true" />
+		<EditText android:id="@+id/tf_clientRegisteration_province" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Province" android:singleLine="true" />
+		<EditText android:id="@+id/tf_clientRegisteration_department" android:textSize="13sp"  android:background="@drawable/text_fields_style" android:padding="10dp" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginLeft="50dp" android:layout_marginTop="10dp" android:layout_marginRight="50dp" android:hint="Department" android:singleLine="true" />
+		<EditText
+			android:id="@+id/tf_clientRegisteration_cellular"
+			android:textSize="13sp"
+			android:background="@drawable/text_fields_style"
+			android:padding="10dp"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_marginLeft="50dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="50dp"
+			android:hint="Cellular"
+			android:singleLine="true" />
+		<EditText
+			android:id="@+id/tf_clientRegisteration_mail"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_marginLeft="50dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="50dp"
+			android:background="@drawable/text_fields_style"
+			android:hint="Mail"
+			android:inputType="textWebEmailAddress"
+			android:padding="10dp"
+			android:singleLine="true"
+			android:textSize="13sp" />
+
+		<EditText
+			android:id="@+id/tf_clientRegisteration_password"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_marginLeft="50dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="50dp"
+			android:background="@drawable/text_fields_style"
+			android:hint="Passowrd"
+			app:passwordToggleEnabled="true"
+			android:inputType="textPassword"
+			android:padding="10dp"
+			android:singleLine="true"
+			android:textSize="13sp" />
+		<EditText
+			android:id="@+id/tf_clientRegisteration_confirmPassword"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_marginLeft="50dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="50dp"
+			android:background="@drawable/text_fields_style"
+			android:hint="Passowrd"
+			android:inputType="textPassword"
+			android:padding="10dp"
+			app:passwordToggleEnabled="true"
+			android:singleLine="true"
+			android:textSize="13sp" />
+		<Button
+			android:id="@+id/btn_client_SignUp"
+			android:background="@drawable/bluebutton_style"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_marginLeft="50dp"
+			android:layout_marginTop="55dp"
+			android:layout_marginRight="50dp"
+			android:text="Sign Up"
+			android:layout_marginBottom="20dp"
+			android:layout_centerInParent="true" />
+	</LinearLayout>
+</LinearLayout>
+</ScrollView>
