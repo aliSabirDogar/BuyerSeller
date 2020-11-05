@@ -126,6 +126,7 @@ public class order_details_shop_tray extends AppCompatActivity {
             }
         });
         tv_customer_order_details.setText("Customer : " + ShopTray.customer_id);
+       // tv_customer_order_details.setText("Customer : " + ShopTray.customer_id);
         TraySellerDetailApi();
 
 
