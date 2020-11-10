@@ -13,7 +13,7 @@
 
 
         <TextView
-            android:id="@+id/tv_buyer_order_details_item"
+            android:id="@+id/tv_seller_order_details_item"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Customer order details"
@@ -23,7 +23,7 @@
             android:gravity="fill"
             android:layout_weight="4"/>
         <EditText
-            android:id="@+id/tv_price_buyer_order_details_item"
+            android:id="@+id/tv_price_seller_order_details_item"
             android:layout_width="20dp"
             android:textColor="@android:color/black"
             android:layout_height="match_parent"
@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:text="Price" />
         <EditText
-            android:id="@+id/tv_total_buyer_order_details_item"
+            android:id="@+id/tv_total_seller_order_details_item"
             android:layout_width="20dp"
             android:textColor="@android:color/black"
             android:layout_height="match_parent"

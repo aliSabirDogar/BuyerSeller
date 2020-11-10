@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BuyerTray"></activity>
+        <activity android:name=".Order.SellerTrayOrderDetails"
+            android:label="Seller Tray"/>
+
+        <activity android:name=".Order.SellerTray"
+            android:label="Seller Tray"/>
+        <activity android:name=".Order.BuyerTray"
+            android:label="Buyer Tray"/>
         <activity
             android:name=".MyBuyersOrders"
             android:label="My Buyers" />

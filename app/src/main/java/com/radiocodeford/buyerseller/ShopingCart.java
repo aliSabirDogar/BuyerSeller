@@ -46,11 +46,11 @@ public class ShopingCart extends AppCompatActivity {
             }
         });
     }
-    @Override
+  /*  @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
+        getMenuInflater().inflate(R.menu.buyer_screens_menu, menu);
         return true;
     }
 
@@ -69,6 +69,7 @@ public class ShopingCart extends AppCompatActivity {
                 return true;
             default: return super.onOptionsItemSelected(item);
         }
-    }
-
+  */
 }
+
+

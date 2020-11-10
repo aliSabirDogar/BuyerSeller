@@ -136,6 +136,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="30dp"
+                android:id="@+id/btn_buyer_tray_send"
                 android:background="@drawable/bluebutton_style"
                 android:text="SEND " />
         </LinearLayout>

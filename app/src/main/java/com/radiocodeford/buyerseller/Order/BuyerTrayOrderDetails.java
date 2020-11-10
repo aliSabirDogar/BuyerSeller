@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,9 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.OrderDetailsBuyerTrayListAdapter;
-import com.radiocodeford.buyerseller.Adapter.OrderDetailsShopTrayListAdapter;
-import com.radiocodeford.buyerseller.BuyerTray;
 import com.radiocodeford.buyerseller.R;
 import com.radiocodeford.buyerseller.ShopingCart;
 import com.radiocodeford.buyerseller.model.OrderDetailsShopTrayListModel;
@@ -40,7 +40,7 @@ public class BuyerTrayOrderDetails extends AppCompatActivity {
 
     ListView simpleList;
     ArrayList<OrderDetailsShopTrayListModel> list = new ArrayList<>();
-    TextView tv_customer_order_details;
+    TextView tv_seller_order_details;
     ArrayList<String> customeridarray;
     private RequestQueue requestQueue;
     ArrayAdapter<String> customeridarrayAdapter;
@@ -48,6 +48,7 @@ public class BuyerTrayOrderDetails extends AppCompatActivity {
     String url_tray_buyer_detail = "http://tuscomprasfacil.com/mpew/mpew/restapi/index.php/tray_buyer_detail";
     ArrayList<OrderDetailsShopTrayListModel> data = new ArrayList<>();
     Context mContext;
+    Button send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,14 +56,67 @@ public class BuyerTrayOrderDetails extends AppCompatActivity {
 
         setContentView(R.layout.activity_buyer_tray_order_details);
         mContext = getApplicationContext();
+        send=(Button)findViewById(R.id.btn_buyer_tray_send);
         requestQueue = Volley.newRequestQueue(this);
         if(mContext!=null) {
             requestQueue = Volley.newRequestQueue(mContext);
         }
         simpleList = (ListView) findViewById(R.id.list_buyer_tray);
-        tv_customer_order_details = (TextView) findViewById(R.id.tv_Buyer_tray_order_no);
-        tv_customer_order_details.setText("Customer : " + BuyerTray.seller_id);
+        tv_seller_order_details = (TextView) findViewById(R.id.tv_Buyer_tray_order_no);
+        tv_seller_order_details.setText("Customer : " + BuyerTray.seller_id);
         TraySellerDetailApi();
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringBuilder sb = new StringBuilder();
+
+                String message;
+
+
+                String send_notification;
+                for(int i=0;i<list.size();i++)
+                {
+
+                    String details=list.get(i).product_details;
+                    String price=list.get(i).price;
+                    String total=list.get(i).total;
+                    // value=value+"-"+details+"-"+price+"-"+total;
+
+                    sb.append(details+"-"+price+"-"+total);
+
+
+                }
+
+                message=sb.toString();
+
+                message="New message from seller"+message;
+
+                message="{'contents': {'en':"+message;
+                String message2="'},";
+                String message3="'include_player_ids': ['" + "84e4a7ce-0133-4edc-aa64-83d9264d9b6a" + "']}";
+                String finalMessage=message+message2+message3;
+
+
+
+
+                try {
+                    OneSignal.postNotification(new JSONObject(finalMessage),
+                            new OneSignal.PostNotificationResponseHandler() {
+                                @Override
+                                public void onSuccess(JSONObject response) {
+                                    Log.i("OneSignalExample", "postNotification Success: " + response.toString());
+                                }
+                                @Override
+                                public void onFailure(JSONObject response) {
+                                    Log.e("OneSignalExample", "postNotification Failure: " + response.toString());
+                                }
+                            });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
 
@@ -73,7 +127,7 @@ public class BuyerTrayOrderDetails extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
+        getMenuInflater().inflate(R.menu.buyer_screens_menu, menu);
         return true;
     }
 
@@ -87,9 +141,7 @@ public class BuyerTrayOrderDetails extends AppCompatActivity {
                     BuyerTrayOrderDetails.this.startActivity(new Intent(BuyerTrayOrderDetails.this, ShopingCart.class));
                 return true;
 
-            case R.id.toolbar_bell:   //this item has your app icon
-                BuyerTrayOrderDetails.this.startActivity(new Intent(BuyerTrayOrderDetails.this, ShopTray.class));
-                return true;
+
             default: return super.onOptionsItemSelected(item);
         }
     }

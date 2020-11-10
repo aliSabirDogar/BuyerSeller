@@ -4,6 +4,7 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,20 +15,30 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
+import com.radiocodeford.buyerseller.CodePhoneNumber;
 import com.radiocodeford.buyerseller.LoginSellerBuyer;
+import com.radiocodeford.buyerseller.MarketRegisteration;
+import com.radiocodeford.buyerseller.Order.MakeOrderHomeScreen;
 import com.radiocodeford.buyerseller.R;
 import com.radiocodeford.buyerseller.model.CategoryModelVerticalList;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class HomeScreenCategoryListAdapter extends Adapter<HomeScreenCategoryListAdapter.MyViewHolder> implements OnClickListener {
     public Context con;
     private ArrayList<CategoryModelVerticalList> dataSet;
+    SharedPreferences pref;
+    String screenCheck,loginChecker;
+
 
     public static class MyViewHolder extends ViewHolder {
         TextView TvNameLeaderBorad_horizontal;
         ImageView event_image;
         TextView event_title;
+
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -37,6 +48,7 @@ public class HomeScreenCategoryListAdapter extends Adapter<HomeScreenCategoryLis
     }
 
     public void onClick(View v) {
+
     }
 
     public HomeScreenCategoryListAdapter(ArrayList<CategoryModelVerticalList> data, Context con) {
@@ -65,7 +77,15 @@ public class HomeScreenCategoryListAdapter extends Adapter<HomeScreenCategoryLis
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.market_list_item_home_screen, parent, false);
         view.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
-                HomeScreenCategoryListAdapter.this.ShowAlert();
+                pref =con.getSharedPreferences("buyerSeller2", MODE_PRIVATE);
+
+                loginChecker = pref.getString("LoginOneTime","null");
+                if(loginChecker.contains("success")){
+                    HomeScreenCategoryListAdapter.this.con.startActivity(new Intent(HomeScreenCategoryListAdapter.this.con, MakeOrderHomeScreen.class));
+                }
+                else {
+                    HomeScreenCategoryListAdapter.this.ShowAlert();
+                }
             }
         });
         return new MyViewHolder(view);

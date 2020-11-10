@@ -27,7 +27,7 @@ Button payNow;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
+        getMenuInflater().inflate(R.menu.buyer_screens_menu, menu);
         return true;
     }
 
@@ -39,9 +39,7 @@ Button payNow;
                 Payments.this.startActivity(new Intent(Payments.this, ShopingCart.class));
                 return true;
 
-            case R.id.toolbar_bell:   //this item has your app icon
-                Payments.this.startActivity(new Intent(Payments.this, ShopTray.class));
-                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -6,9 +6,5 @@
         app:showAsAction="always"
         android:title="" />
 
-    <item android:id="@+id/toolbar_bell"
-        android:icon="@drawable/bell3"
-        app:showAsAction="always"
-        android:title="" />
 
 </menu>

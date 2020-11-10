@@ -25,8 +25,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.OrderDetailsShopTrayListAdapter;
-import com.radiocodeford.buyerseller.CategoriesHomeScreen;
-import com.radiocodeford.buyerseller.Order.ShopTray;
 import com.radiocodeford.buyerseller.R;
 import com.radiocodeford.buyerseller.ShopingCart;
 import com.radiocodeford.buyerseller.model.OrderDetailsShopTrayListModel;
@@ -37,7 +35,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class order_details_shop_tray extends AppCompatActivity {
@@ -71,7 +68,7 @@ public class order_details_shop_tray extends AppCompatActivity {
         EditText comment = (EditText) findViewById(R.id.shop_try_comment);
 
 
-        shop_tray = (Button) findViewById(R.id.shop_try_send);
+        shop_tray = (Button) findViewById(R.id.shop_tray_send);
 
         shop_tray.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +86,7 @@ public class order_details_shop_tray extends AppCompatActivity {
                     String details=list.get(i).product_details;
                     String price=list.get(i).price;
                     String total=list.get(i).total;
-                   // value=value+"-"+details+"-"+price+"-"+total;
+                    // value=value+"-"+details+"-"+price+"-"+total;
 
                     sb.append(details+"-"+price+"-"+total);
 
@@ -126,30 +123,17 @@ public class order_details_shop_tray extends AppCompatActivity {
             }
         });
         tv_customer_order_details.setText("Customer : " + ShopTray.customer_id);
-       // tv_customer_order_details.setText("Customer : " + ShopTray.customer_id);
+
         TraySellerDetailApi();
 
 
-        /*list.add(new OrderDetailsShopTrayListModel("yellow potato", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("white potato", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("Tomato", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("carrot", "200$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("juice", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("apple", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("orange", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("banana", "20$", "200"));
-        list.add(new OrderDetailsShopTrayListModel("apple", "30$", "200"));*/
 
-
-     /* OrderDetailsShopTrayListAdapter customeridarrayAdapter = new
-                OrderDetailsShopTrayListAdapter(getApplicationContext(), list);
-        simpleList.setAdapter(customeridarrayAdapter);*/
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
+        getMenuInflater().inflate(R.menu.seller_screens_menu, menu);
         return true;
     }
 
@@ -157,9 +141,7 @@ public class order_details_shop_tray extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.toolbar_basket:   //this item has your app icon
-                order_details_shop_tray.this.startActivity(new Intent(order_details_shop_tray.this, ShopingCart.class));
-                return true;
+
 
             case R.id.toolbar_bell:   //this item has your app icon
                 order_details_shop_tray.this.startActivity(new Intent(order_details_shop_tray.this, ShopTray.class));

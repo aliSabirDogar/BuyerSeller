@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+        <LinearLayout android:orientation="horizontal" android:layout_marginTop="10dp" android:background="@color/cardview_light_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp">
+            <EditText android:textSize="14dp" android:drawableLeft="@android:drawable/ic_menu_search" android:layout_marginLeft="0dp" android:layout_marginRight="20dp" android:padding="10dp" android:textColorHint="@color/colorPrimary" android:gravity="left|center"  android:layout_weight="1"  android:visibility="visible" android:layout_width="match_parent" android:layout_height="40dp" android:hint="Search" android:background="@drawable/text_fields_style"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#22E0CE"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+
+            <TextView
+                android:id="@+id/tv_Seller_tray_order_no"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Carlos store-23334323-10:12"
+                android:gravity="fill"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="4"/>
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="Price" />
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="Total"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+            <ListView
+
+                android:id="@+id/list_seller_tray_order_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/black"
+
+                android:dividerHeight="2dp"
+                tools:context="abhiandroid.com.listexample.MainActivity">
+            </ListView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <EditText  android:id="@+id/tf_Seller_tray_observations" android:textSize="13sp"    android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"  android:background="@drawable/text_fields_style"  android:layout_width="match_parent" android:layout_height="100dp"   android:hint="Observations" android:gravity="center"  />
+
+
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/btn_Seller_tray_send"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bluebutton_style"
+                android:text="SEND " />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

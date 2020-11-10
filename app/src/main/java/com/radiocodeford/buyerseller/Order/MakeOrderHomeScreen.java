@@ -1,14 +1,12 @@
 package com.radiocodeford.buyerseller.Order;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +24,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -48,10 +45,9 @@ import com.android.volley.toolbox.Volley;
 //import com.google.android.gms.location.LocationServices;
 //import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.OrderReviewScreenListAdapter;
-import com.radiocodeford.buyerseller.BuyerTray;
 import com.radiocodeford.buyerseller.R;
-import com.radiocodeford.buyerseller.ShopingCart;
 import com.radiocodeford.buyerseller.model.MasterProductsModel;
 import com.radiocodeford.buyerseller.model.SelectQueryOrder;
 
@@ -215,6 +211,7 @@ public class MakeOrderHomeScreen extends AppCompatActivity {
                     store_label.setVisibility(View.GONE);
 
 
+
                 }
             });
             this.store.setOnClickListener(new OnClickListener() {
@@ -345,21 +342,7 @@ public class MakeOrderHomeScreen extends AppCompatActivity {
 
                 }
             });
-            send.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                   // data.clear();
-                    adapter = new OrderReviewScreenListAdapter(data, MakeOrderHomeScreen.this);
-
-
-                    list.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
-                   getApi_call_counter();
-
-
-                }
-            });
 
 
         }
@@ -376,7 +359,7 @@ public class MakeOrderHomeScreen extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
+        getMenuInflater().inflate(R.menu.buyer_screens_menu, menu);
         return true;
     }
 
@@ -387,12 +370,10 @@ public class MakeOrderHomeScreen extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.toolbar_basket:   //this item has your app icon
-                MakeOrderHomeScreen.this.startActivity(new Intent(MakeOrderHomeScreen.this, ShopingCart.class));
+                MakeOrderHomeScreen.this.startActivity(new Intent(MakeOrderHomeScreen.this, SellerTrayOrderDetails.class));
                 return true;
 
-            case R.id.toolbar_bell:   //this item has your app icon
-                MakeOrderHomeScreen.this.startActivity(new Intent(MakeOrderHomeScreen.this, ShopTray.class));
-                return true;
+
             default: return super.onOptionsItemSelected(item);
         }
     }

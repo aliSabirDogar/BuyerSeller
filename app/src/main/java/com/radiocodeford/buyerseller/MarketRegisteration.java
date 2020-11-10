@@ -69,9 +69,15 @@ public class MarketRegisteration extends AppCompatActivity {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            //pDialog.dismiss();
-                            Toast.makeText(MarketRegisteration.this, "Registered Successfully as a Business", Toast.LENGTH_LONG).show();
-                        }
+                            String result=response;
+                            if(result.contains("success")) {
+
+                                Toast.makeText(MarketRegisteration.this, "Registered Successfully as a Business", Toast.LENGTH_LONG).show();
+                            }
+                            else{
+                                Toast.makeText(MarketRegisteration.this, "this phone is already registered", Toast.LENGTH_LONG).show();
+                            }
+                            }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {

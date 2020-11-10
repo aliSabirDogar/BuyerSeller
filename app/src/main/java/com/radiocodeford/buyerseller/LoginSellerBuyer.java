@@ -248,7 +248,7 @@ public  void login_buyer(){
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<>();
 
-                params.put("phone",  "phone.getText().toString()");
+                params.put("phone",  phone.getText().toString());
                 params.put("password", password.getText().toString());
 
                 return params;

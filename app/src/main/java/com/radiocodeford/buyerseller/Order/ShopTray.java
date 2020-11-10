@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -34,8 +33,6 @@ import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.ShopTrayListAdapter;
 import com.radiocodeford.buyerseller.R;
 import com.radiocodeford.buyerseller.ShopingCart;
-import com.radiocodeford.buyerseller.model.MasterProductsModel;
-import com.radiocodeford.buyerseller.model.ModelOrderReview;
 import com.radiocodeford.buyerseller.model.ShopTrayModel;
 
 import org.json.JSONArray;
@@ -228,28 +225,7 @@ public class ShopTray extends AppCompatActivity implements OneSignal.Notificatio
         requestQueue.add(stringRequest);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.categories_home_screen, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
 
-        switch (item.getItemId())
-        {
-            case R.id.toolbar_basket:   //this item has your app icon
-                ShopTray.this.startActivity(new Intent(ShopTray.this, ShopingCart.class));
-                return true;
 
-            case R.id.toolbar_bell:   //this item has your app icon
-                ShopTray.this.startActivity(new Intent(ShopTray.this, ShopTray.class));
-                return true;
-            default: return super.onOptionsItemSelected(item);
-        }
-    }
 }

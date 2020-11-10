@@ -116,7 +116,7 @@ public class homescreen extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.categories_home_screen, menu);
+        inflater.inflate(R.menu.buyer_screens_menu, menu);
 
         // return true so that the menu pop up is opened
         return true;

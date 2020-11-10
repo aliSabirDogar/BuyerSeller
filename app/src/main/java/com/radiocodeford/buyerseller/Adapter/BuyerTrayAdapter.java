@@ -19,6 +19,7 @@ import com.radiocodeford.buyerseller.model.ShopTrayModel;
 import java.util.List;
 
 public class BuyerTrayAdapter extends Adapter<BuyerTrayAdapter.MyViewHolder> {
+
     public Context cont;
     private List<BuyerTrayModel> list;
     private OnClickListener mOnItemClickListener;

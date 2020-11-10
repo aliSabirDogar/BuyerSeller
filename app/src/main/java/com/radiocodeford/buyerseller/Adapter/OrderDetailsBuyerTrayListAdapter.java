@@ -43,10 +43,10 @@ public class OrderDetailsBuyerTrayListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflter.inflate(R.layout.item_list_order_details_buyer_shop_tray, null);
+        view = inflter.inflate(R.layout.item_list_order_details_buyer_tray, null);
         TextView customer_details= (TextView) view.findViewById(R.id.tv_buyer_order_details_item);
-        EditText price = (EditText) view.findViewById(R.id.tv_price_buyer_order_details_item);
-        EditText total = (EditText) view.findViewById(R.id.tv_total_buyer_order_details_item);
+        TextView price = (TextView) view.findViewById(R.id.tv_price_buyer_order_details_item);
+        TextView total = (TextView) view.findViewById(R.id.tv_total_buyer_order_details_item);
 
         customer_details.setText(list1.get(i).getProduct_details());
         price.setText(list1.get(i).getPrice());
