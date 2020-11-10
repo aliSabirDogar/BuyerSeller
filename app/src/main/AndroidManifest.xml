@@ -25,7 +25,8 @@
         <activity
             android:name=".MyBuyersOrders"
             android:label="My Buyers" />
-        <activity android:name=".MarketRegisteration" />
+        <activity android:name=".MarketRegisteration"
+            android:label="Market Registration"/>
         <activity
             android:name=".MySellersOrders"
             android:label="My Seller" />

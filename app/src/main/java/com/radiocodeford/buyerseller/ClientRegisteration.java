@@ -59,7 +59,7 @@ public class ClientRegisteration extends AppCompatActivity {
         confirmPassword = (EditText) findViewById(R.id.tf_clientRegisteration_confirmPassword);
 
         pref = this.getSharedPreferences("buyerSeller", Context.MODE_PRIVATE);
-        player_id = pref.getString("player_id", player_id);
+        player_id = pref.getString("player_id", "null");
         this.signup = (Button) findViewById(R.id.btn_client_SignUp);
         this.signup.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {

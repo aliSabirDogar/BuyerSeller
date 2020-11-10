@@ -29,6 +29,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.onesignal.OSPermissionSubscriptionState;
 import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.HomeScreenCategoryListAdapter;
 import com.radiocodeford.buyerseller.Adapter.HomeScreenSliderListAdapter;
@@ -106,8 +107,19 @@ public class CategoriesHomeScreen extends AppCompatActivity  {
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+        OSPermissionSubscriptionState status = OneSignal.getPermissionSubscriptionState();
+        status.getPermissionStatus().getEnabled();
+
+        status.getSubscriptionStatus().getSubscribed();
+        status.getSubscriptionStatus().getUserSubscriptionSetting();
+        status.getSubscriptionStatus().getUserId();
+        status.getSubscriptionStatus().getPushToken();
+
+        String playerid = status.getSubscriptionStatus().getUserId();
         //sharedpereference
         pref = this.getSharedPreferences("buyerSeller", Context.MODE_PRIVATE);
+        editor.putString("player_id",playerid);
+
         screenCheck = pref.getString("screenCheckKey", "null");
         loginChecker = pref.getString("LoginOneTime","null");
         if (loginChecker.contains("success")){

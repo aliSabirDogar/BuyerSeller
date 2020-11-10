@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,11 +32,12 @@ public class MarketRegisteration extends AppCompatActivity {
     Button signup;
     private RequestQueue requestQueue;
     Context mContext=null;
-    String URL = "http://tuscomprasfacil.com/mpew/mpew/restapi/index.php/signup_market";
+    String UrlSignupMarket = "http://tuscomprasfacil.com/mpew/mpew/restapi/index.php/signup_market";
+    String UrlPlayerId = "http://tuscomprasfacil.com/mpew/mpew/restapi/index.php/insert_player_id_market";
     String strpassword,strConfirmPassword;
-
-
-
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+    String playerID;
     EditText marketname, address, manager, cellular, telephone, mail, district, shippingCost, user, password, confirmPassword;
 
     @Override
@@ -43,6 +45,8 @@ public class MarketRegisteration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_market_registeration);
+        pref = this.getSharedPreferences("buyerSeller", Context.MODE_PRIVATE);
+        playerID=pref.getString("player_id", "null");
          mContext = getApplicationContext();
          requestQueue = Volley.newRequestQueue(this);
         if(mContext!=null) {
@@ -66,13 +70,13 @@ public class MarketRegisteration extends AppCompatActivity {
                 strpassword = password.getText().toString();
                 strConfirmPassword = confirmPassword.getText().toString();
                 if (strpassword.matches(strConfirmPassword)) {
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, UrlSignupMarket, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             String result=response;
                             if(result.contains("success")) {
+                                PostPlayerId();
 
-                                Toast.makeText(MarketRegisteration.this, "Registered Successfully as a Business", Toast.LENGTH_LONG).show();
                             }
                             else{
                                 Toast.makeText(MarketRegisteration.this, "this phone is already registered", Toast.LENGTH_LONG).show();
@@ -82,7 +86,7 @@ public class MarketRegisteration extends AppCompatActivity {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(MarketRegisteration.this, "Try again later", Toast.LENGTH_LONG).show();
-                            Toast.makeText(MarketRegisteration.this, error.toString(), Toast.LENGTH_LONG).show();
+
                         }
                     }) {
                         @Override
@@ -109,7 +113,7 @@ public class MarketRegisteration extends AppCompatActivity {
 
                     requestQueue.add(stringRequest);
 
-                    MarketRegisteration.this.startActivity(new Intent(MarketRegisteration.this, LoginSellerBuyer.class));
+
                 }
                 else {
                     Toast.makeText(MarketRegisteration.this, "Confirm Password should be same ", Toast.LENGTH_LONG).show();
@@ -118,5 +122,46 @@ public class MarketRegisteration extends AppCompatActivity {
 
             }
         });
+
+    }
+    public  void PostPlayerId()
+    {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, UrlPlayerId, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                String result=response;
+                if(result.contains("success")) {
+
+
+                    Toast.makeText(MarketRegisteration.this, "Registered Successfully as a Business", Toast.LENGTH_LONG).show();
+                    MarketRegisteration.this.startActivity(new Intent(MarketRegisteration.this, LoginSellerBuyer.class));
+                }
+                else{
+                    Toast.makeText(MarketRegisteration.this, "this phone is already registered", Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MarketRegisteration.this, "Try again later", Toast.LENGTH_LONG).show();
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<>();
+
+                params.put("cell", cellular.getText().toString());
+                params.put("player_id", playerID);
+
+                return params;
+            }
+        };
+
+
+        requestQueue.add(stringRequest);
+
     }
 }
