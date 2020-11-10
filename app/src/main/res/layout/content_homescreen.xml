@@ -61,12 +61,7 @@
 				android:gravity="left"
 				android:textColor="@android:color/black"/>
 
-			<Spinner
-				android:id="@+id/categoryspinner"
-				android:layout_width="match_parent"
-				android:layout_height="40dp"
-				android:gravity="left"
-				android:textColor="@android:color/black"/>
+
 
 			<androidx.recyclerview.widget.RecyclerView
 				android:orientation="vertical"

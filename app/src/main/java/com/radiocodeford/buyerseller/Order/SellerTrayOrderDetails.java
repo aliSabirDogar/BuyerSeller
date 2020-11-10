@@ -25,7 +25,11 @@ import com.radiocodeford.buyerseller.model.OrderDetailsShopTrayListModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SellerTrayOrderDetails extends AppCompatActivity {
     ListView simpleList;
@@ -67,60 +71,77 @@ public class SellerTrayOrderDetails extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
 
-                StringBuilder sb = new StringBuilder();
+                    @Override
+                    public void run() {
+                        try  {
+                            SendNotification();
 
-                String message;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
 
-
-                String send_notification;
-                for(int i=0;i<list.size();i++)
-                {
-
-                    String details=list.get(i).product_details;
-                    String price=list.get(i).price;
-                    String total=list.get(i).total;
-                    // value=value+"-"+details+"-"+price+"-"+total;
-
-                    sb.append(details+"-"+price+"-"+total);
-
-
-                }
-
-                message=sb.toString();
-
-                message="New message from seller";
-
-                message="{'contents': {'en':"+message;
-                String message2="'},";
-                String message3="'include_player_ids': ['" + "84e4a7ce-0133-4edc-aa64-83d9264d9b6a" + "']}";
-                String finalMessage=message+message2+message3;
-
-
-
-
-                try {
-                    OneSignal.postNotification(new JSONObject(finalMessage),
-                            new OneSignal.PostNotificationResponseHandler() {
-                                @Override
-                                public void onSuccess(JSONObject response) {
-                                    Log.i("OneSignalExample", "postNotification Success: " + response.toString());
-                                }
-                                @Override
-                                public void onFailure(JSONObject response) {
-                                    Log.e("OneSignalExample", "postNotification Failure: " + response.toString());
-                                }
-                            });
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+                thread.start();
+ }
         });
 
 
 
     }
+    public void SendNotification()
+    {
+        try {
+            String jsonResponse;
 
+            URL url = new URL("https://onesignal.com/api/v1/notifications");
+            HttpURLConnection con;
+            con = (HttpURLConnection)url.openConnection();
+            con.setUseCaches(false);
+            con.setDoOutput(true);
+            con.setDoInput(true);
+
+            con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+            con.setRequestMethod("POST");
+
+            String strJsonBody = "{"
+                    +   "\"app_id\": \"c5f7d7c2-7957-4c05-8a5d-f4eca9be3c8e\","
+                    +   "\"include_player_ids\": [\"20d7df67-6e46-43df-9038-8d181b693b8a\"],"
+                    +   "\"data\": {\"foo\": \"bar\"},"
+                    +   "\"contents\": {\"en\": \"Message from seller\"}"
+                    + "}";
+
+
+            System.out.println("strJsonBody:\n" + strJsonBody);
+
+            byte[] sendBytes = strJsonBody.getBytes("UTF-8");
+            con.setFixedLengthStreamingMode(sendBytes.length);
+
+            OutputStream outputStream = con.getOutputStream();
+            outputStream.write(sendBytes);
+
+            int httpResponse = con.getResponseCode();
+            System.out.println("httpResponse: " + httpResponse);
+
+            if (  httpResponse >= HttpURLConnection.HTTP_OK
+                    && httpResponse < HttpURLConnection.HTTP_BAD_REQUEST) {
+                Scanner scanner = new Scanner(con.getInputStream(), "UTF-8");
+                jsonResponse = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
+                scanner.close();
+            }
+            else {
+                Scanner scanner = new Scanner(con.getErrorStream(), "UTF-8");
+                jsonResponse = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
+                scanner.close();
+            }
+            System.out.println("jsonResponse:\n" + jsonResponse);
+
+        } catch(Throwable t) {
+            t.printStackTrace();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

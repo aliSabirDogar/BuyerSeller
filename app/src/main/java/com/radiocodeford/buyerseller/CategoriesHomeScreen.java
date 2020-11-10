@@ -29,6 +29,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.onesignal.OneSignal;
 import com.radiocodeford.buyerseller.Adapter.HomeScreenCategoryListAdapter;
 import com.radiocodeford.buyerseller.Adapter.HomeScreenSliderListAdapter;
 import com.radiocodeford.buyerseller.Order.ShopTray;
@@ -98,7 +99,13 @@ public class CategoriesHomeScreen extends AppCompatActivity  {
         caterequestQueue = Volley.newRequestQueue(this);
         arrayList = new ArrayList();
         categoryarraylist = new ArrayList();
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
 
+        // OneSignal Initialization
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
         //sharedpereference
         pref = this.getSharedPreferences("buyerSeller", Context.MODE_PRIVATE);
         screenCheck = pref.getString("screenCheckKey", "null");

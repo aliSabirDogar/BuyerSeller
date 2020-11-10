@@ -22,6 +22,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.radiocodeford.buyerseller.Order.MakeOrderHomeScreen;
+import com.radiocodeford.buyerseller.Order.SellerTray;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -221,7 +222,7 @@ public  void login_buyer(){
                     editor.putString("password",strPassword);
                     editor.putString("LoginOneTime","success");
                     editor.commit();
-                    LoginSellerBuyer.this.startActivity(new Intent(LoginSellerBuyer.this, MakeOrderHomeScreen.class));
+                    LoginSellerBuyer.this.startActivity(new Intent(LoginSellerBuyer.this, SellerTray.class));
 
 
                 }
